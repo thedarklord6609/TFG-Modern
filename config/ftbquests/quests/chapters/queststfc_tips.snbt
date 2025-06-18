@@ -1228,7 +1228,6 @@
 			dependency_requirement: "one_completed"
 			description: ["{quests.tfg_tips.refrigerator.desc}"]
 			id: "58EC77A796979E68"
-			shape: "gear"
 			size: 2.0d
 			subtitle: "{quests.tfg_tips.refrigerator.subtitle}"
 			tasks: [{
@@ -1237,8 +1236,8 @@
 				type: "item"
 			}]
 			title: "{quests.tfg_tips.refrigerator.title}"
-			x: 5.5d
-			y: -18.0d
+			x: 9.0d
+			y: -17.0d
 		}
 		{
 			dependencies: ["2EFB241490502DB3"]
@@ -1270,7 +1269,6 @@
 							Damage: 0
 						}
 					}
-					optional_task: true
 					type: "item"
 				}
 				{
@@ -1282,7 +1280,6 @@
 							Damage: 0
 						}
 					}
-					optional_task: true
 					type: "item"
 				}
 				{
@@ -1294,7 +1291,6 @@
 							Damage: 0
 						}
 					}
-					optional_task: true
 					type: "item"
 				}
 				{
@@ -1306,7 +1302,6 @@
 							Damage: 0
 						}
 					}
-					optional_task: true
 					type: "item"
 				}
 				{
@@ -1399,7 +1394,8 @@
 			dependency_requirement: "one_completed"
 			description: ["{quests.tfg_tips.cellar.desc}"]
 			id: "3D1FF501DE2E56FE"
-			size: 1.5d
+			shape: "gear"
+			size: 4.0d
 			subtitle: "{quests.tfg_tips.cellar.subtitle}"
 			tasks: [
 				{
@@ -1422,8 +1418,8 @@
 				}
 			]
 			title: "{quests.tfg_tips.cellar.title}"
-			x: 3.0d
-			y: -16.0d
+			x: 3.5d
+			y: -17.0d
 		}
 		{
 			dependencies: ["3D1FF501DE2E56FE"]
@@ -1443,8 +1439,8 @@
 				type: "item"
 			}]
 			title: "{quests.tfg_tips.cellar_blocks.title}"
-			x: 3.0d
-			y: -17.5d
+			x: 3.5d
+			y: -20.0d
 		}
 		{
 			dependencies: ["2EFB241490502DB3"]
@@ -1602,55 +1598,34 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["{quests.tfg_tips.passive_preservation.desc}"]
-			disable_toast: true
-			icon: {
-				Count: 1
-				ForgeCaps: {
-					Parent: {
-						heat: 0.0f
-						ticks: 0L
-					}
-				}
-				id: "tfc:ceramic/vessel"
-				tag: { }
-			}
 			id: "13F7066858E923FF"
 			subtitle: "{quests.tfg_tips.passive_preservation.subtitle}"
 			tasks: [{
-				dimension: "minecraft:overworld"
-				icon: "gtceu:overworld_marker"
-				id: "5BAF5F5343C3E42A"
-				title: "{quests.stone_age.temperature.task}"
-				type: "dimension"
+				id: "54AAB9886964A160"
+				title: "{quests.tasktype.checkmark}"
+				type: "checkmark"
 			}]
 			title: "{quests.tfg_tips.passive_preservation.title}"
 			x: 6.5d
-			y: -16.0d
+			y: -15.5d
 		}
 		{
 			dependencies: ["4047EE998BC4CD03"]
 			description: ["{quests.tfg_tips.get_milk.desc}"]
 			id: "3C7F170E065B60E1"
 			subtitle: "{quests.tfg_tips.get_milk.subtitle}"
-			tasks: [
-				{
-					id: "5ADFB5FC06EAED6C"
-					item: {
-						Count: 1
-						id: "ftbfiltersystem:smart_filter"
-						tag: {
-							"ftbfiltersystem:filter": "or(only_one(nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"minecraft:milk\"}})item(minecraft:milk_bucket))only_one(nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"firmalife:yak_milk\"}})item(firmalife:bucket/yak_milk))only_one(nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"firmalife:goat_milk\"}})item(firmalife:bucket/goat_milk)))"
-						}
+			tasks: [{
+				id: "5ADFB5FC06EAED6C"
+				item: {
+					Count: 1
+					id: "ftbfiltersystem:smart_filter"
+					tag: {
+						"ftbfiltersystem:filter": "or(only_one(nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"minecraft:milk\"}})item(minecraft:milk_bucket))only_one(nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"firmalife:yak_milk\"}})item(firmalife:bucket/yak_milk))only_one(nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"firmalife:goat_milk\"}})item(firmalife:bucket/goat_milk)))"
 					}
-					optional_task: true
-					title: "{quests.tfg_tips.get_milk.task}"
-					type: "item"
 				}
-				{
-					id: "26460F400A280214"
-					type: "checkmark"
-				}
-			]
+				title: "{quests.tfg_tips.get_milk.task}"
+				type: "item"
+			}]
 			title: "{quests.tfg_tips.get_milk.title}"
 			x: 4.5d
 			y: -8.5d
@@ -2021,7 +1996,7 @@
 						Count: 1
 						id: "ftbfiltersystem:smart_filter"
 						tag: {
-							"ftbfiltersystem:filter": "custom(HasPreservation/firmalife:smoked)custom(HasPreservation/tfc:brined)"
+							"ftbfiltersystem:filter": "custom(HasPreservation/firmaciv:smoked)custom(HasPreservation/tfc:brined)"
 						}
 					}
 					title: "{quests.tfg_tips.smoke_meat.task}"
@@ -2250,7 +2225,10 @@
 			y: 9.5d
 		}
 		{
-			dependencies: ["2D959136A5FC5F46"]
+			dependencies: [
+				"2D959136A5FC5F46"
+				"56CA2EB7812529C5"
+			]
 			description: ["{quests.tfg_tips.lamps.desc}"]
 			id: "037CDA933FBE2CBE"
 			subtitle: "{quests.tfg_tips.lamps.subtitle}"
@@ -2288,8 +2266,8 @@
 				}
 			]
 			title: "{quests.tfg_tips.lamps.title}"
-			x: -5.5d
-			y: 11.5d
+			x: -5.0d
+			y: 11.0d
 		}
 		{
 			dependencies: [
@@ -2297,16 +2275,6 @@
 				"56CA2EB7812529C5"
 			]
 			description: ["{quests.tfg_tips.lava_lamp.desc}"]
-			icon: {
-				Count: 1
-				ForgeCaps: {
-					"tfc:item_heat": {
-						heat: 0.0f
-						ticks: 0L
-					}
-				}
-				id: "tfc:metal/lamp/blue_steel"
-			}
 			id: "4EBABACAB444244D"
 			optional: true
 			shape: "heart"
@@ -2333,8 +2301,8 @@
 				}
 			]
 			title: "{quests.tfg_tips.lava_lamp.title}"
-			x: -5.5d
-			y: 13.0d
+			x: -5.0d
+			y: 12.5d
 		}
 		{
 			dependencies: ["037CDA933FBE2CBE"]
@@ -2354,8 +2322,8 @@
 				type: "item"
 			}]
 			title: "{quests.tfg_tips.creosote.title}"
-			x: -6.5d
-			y: 12.5d
+			x: -6.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["037CDA933FBE2CBE"]
@@ -2375,8 +2343,8 @@
 				type: "item"
 			}]
 			title: "{quests.tfg_tips.olive_oil.title}"
-			x: -4.5d
-			y: 12.5d
+			x: -4.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["2D959136A5FC5F46"]
@@ -3483,8 +3451,8 @@
 				type: "item"
 			}]
 			title: "{quests.tfg_tips.tallow.title}"
-			x: -7.0d
-			y: 11.5d
+			x: -6.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["150B7C5CD152E1BA"]
@@ -3658,8 +3626,8 @@
 				type: "item"
 			}]
 			title: "{quests.tfg_tips.vessel_preservation.title}"
-			x: 8.0d
-			y: -16.0d
+			x: 6.5d
+			y: -16.5d
 		}
 		{
 			dependencies: ["173F6FA60A5B280B"]
@@ -5301,7 +5269,7 @@
 						Count: 1
 						id: "ftbfiltersystem:smart_filter"
 						tag: {
-							"ftbfiltersystem:filter": "custom(HasPreservation/firmalife:smoked)item(tfc:food/pork)"
+							"ftbfiltersystem:filter": "custom(HasPreservation/firmaciv:smoked)item(tfc:food/pork)"
 						}
 					}
 					title: "{quests.tfg_tips.bacon.task}"
@@ -5336,86 +5304,21 @@
 			y: -12.5d
 		}
 		{
-			dependencies: ["13F7066858E923FF"]
-			description: ["{quests.tfg_tips.lunchbox.desc}"]
-			icon: {
-				Count: 1
-				id: "tfclunchbox:lunchbox"
-				tag: {
-					SelectedSlot: 0
-				}
-			}
-			id: "6C18E8F79A841620"
-			shape: "gear"
-			size: 2.0d
-			subtitle: "{quests.tfg_tips.lunchbox.subtitle}"
-			tasks: [
-				{
-					id: "33971FCF02C81741"
-					item: {
-						Count: 1
-						id: "ftbfiltersystem:smart_filter"
-						tag: {
-							"ftbfiltersystem:filter": "or(item(tfclunchbox:lunchbox)item(tfclunchbox:cooling_lunchbox))"
-						}
-					}
-					title: "{quests.tfg_tips.lunchbox.task}"
-					type: "item"
-				}
-				{
-					id: "5439AF9F5493A3D1"
-					item: {
-						Count: 1
-						id: "tfclunchbox:universal_capsule"
-						tag: {
-							Damage: 0
-							Durability: 10
-							display: {
-								Name: "{\"translate\":\"item.tfclunchbox.universal_capsule.filled\"}"
-							}
-						}
-					}
-					match_nbt: false
-					optional_task: true
-					type: "item"
-				}
-				{
-					id: "134E8B8345E6DEE2"
-					item: {
-						Count: 1
-						id: "ftbfiltersystem:smart_filter"
-						tag: {
-							"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(tfclunchbox:ice)"
-						}
-					}
-					optional_task: true
-					title: "Any #tfclunchbox:ice"
-					type: "item"
-				}
+			description: [
+				"Sometimes storing the same food with slightly different expiration dates can be annoying and take up space. You can combine the same type of food by &bcrafting&f it in your inventory to share the most recent expiration date."
+				""
+				"This is made very relevant with how the grill gives you a max stack of 5 of any food with a mere \"2 minute\" difference between each expiration date."
 			]
-			title: "{quests.tfg_tips.lunchbox.title}"
-			x: 7.5d
-			y: -18.0d
-		}
-		{
-			dependencies: ["037CDA933FBE2CBE"]
-			description: ["{quests.tfg_tips.glowstone_lamp.desc}"]
-			id: "61F58B402F1AE40B"
-			subtitle: "{quests.tfg_tips.glowstone_lamp.subtitle}"
+			id: "3E0667504DBFAD0C"
+			subtitle: "Storing food made easier!"
 			tasks: [{
-				id: "71D52011F8BE66F0"
-				item: {
-					Count: 1
-					id: "ftbfiltersystem:smart_filter"
-					tag: {
-						"ftbfiltersystem:filter": "only_one(item(gtceu:glowstone_bucket)nbt(fuzzy:{fluid:{Amount:1000,FluidName:\"gtceu:glowstone\"}}))"
-					}
-				}
-				type: "item"
+				id: "45C6E0C203D410D5"
+				title: "Expiration Dates"
+				type: "checkmark"
 			}]
-			title: "{quests.tfg_tips.glowstone_lamp.title}"
-			x: -6.5d
-			y: 10.5d
+			title: "Combining Expiration Dates"
+			x: 5.5d
+			y: -9.5d
 		}
 	]
 	subtitle: ["{quests.tfg_tips.subtitle}"]
